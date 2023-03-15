@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Uploaded Image</title>
+  </head>
+  <body>
+    <h1>Uploaded Image</h1>
+    <!-- This is called jinja, a templating language -->
+    {% if file_path %}
+      <img style="width: 100px; height: 100px;" src="{{ file_path }}" alt="Uploaded img">
+    {% endif %}
+
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+    <button onclick="window.location.href='/'">Go Back</button>
+  </body>
+</html>

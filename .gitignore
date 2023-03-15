@@ -1,0 +1,5 @@
+venv
+env
+upload
+__pycache__
+simpsons_model.h5
