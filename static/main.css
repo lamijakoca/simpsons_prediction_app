@@ -42,9 +42,12 @@ input::file-selector-button{
     width: 150px;
     height: 30px;
     border: #c53b32;
+    color:#efc92a;
     background-color: #c53b32;
     border-radius: 10px;
 }
 img{
     border: 2px solid #c53b32;
+    width: 250px;
+    height: 250px;
 }

@@ -6,17 +6,9 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
-app = Flask(__name__, static_folder='upload')
+app = Flask(__name__, static_folder='static')
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-
-package_dir = os.path.dirname(
-    os.path.abspath(__file__)
-)
-static = os.path.join(
-    package_dir, "static"
-)
-app.static_folder=static
 
 # This is loads the model
 saved_model = load_model('./simpsons_model.h5')
@@ -44,11 +36,11 @@ def upload():
     uploaded_file  = request.files['file']
 
     # Check if the uploads directory exists, create it if necessary
-    if not os.path.exists('upload'):
-        os.makedirs('upload')
+    if not os.path.exists('./static/upload'):
+        os.makedirs('./static/upload')
 
     
-    file_path = os.path.join('upload', uploaded_file.filename)
+    file_path = os.path.join('./static/upload', uploaded_file.filename)
     uploaded_file.save(file_path)
 
     img = image.load_img(file_path, target_size=(64, 64, 3))
