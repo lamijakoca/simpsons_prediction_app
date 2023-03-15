@@ -2,12 +2,16 @@
 <html>
   <head>
     <title>Image Upload</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main.css') }}">
   </head>
   <body>
-    <h1>Upload an Image</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="file"><br><br>
-      <input type="submit" value="Upload">
-    </form>
+    <h1>Simpsons Classification App</h1>
+    <div class="center-div">
+    <h2>Upload an Image</h2>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" class="upload-button" name="file">
+        <input type="submit" class="submit-button" value="Upload">
+      </form>
+    </div>
   </body>
 </html>

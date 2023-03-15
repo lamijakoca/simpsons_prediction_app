@@ -8,6 +8,16 @@ from tensorflow.keras.preprocessing import image
 
 app = Flask(__name__, static_folder='upload')
 
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+package_dir = os.path.dirname(
+    os.path.abspath(__file__)
+)
+static = os.path.join(
+    package_dir, "static"
+)
+app.static_folder=static
+
 # This is loads the model
 saved_model = load_model('./simpsons_model.h5')
 
